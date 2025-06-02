@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭佳仑 💕 钱海宁 - 我们的爱情记录</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="background-hearts"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">郭佳仑 💕 钱海宁</h1>
+            <ul class="nav-menu">
+                <li><a href="#timeline" class="nav-link">时间轴</a></li>
+                <li><a href="#photos" class="nav-link">照片墙</a></li>
+                <li><a href="#messages" class="nav-link">留言板</a></li>
+                <li><a href="#memories" class="nav-link">美好回忆</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">郭佳仑 & 钱海宁</h1>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1rem; font-weight: 400;">我们的爱情故事</h2>
+            <p class="hero-subtitle">从 <strong>2023年9月26日</strong> 开始，我们的美好时光</p>
+            <div class="love-counter">
+                <div class="counter-item">
+                    <span class="counter-number" id="days-count">0</span>
+                    <span class="counter-label">天</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="hours-count">0</span>
+                    <span class="counter-label">小时</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="minutes-count">0</span>
+                    <span class="counter-label">分钟</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 时间轴 -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">我们的时间轴</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023.09.26</div>
+                    <div class="timeline-content">
+                        <h3>确认关系 💑</h3>
+                        <p>这一天晚上，郭佳仑和钱海宁正式确认了关系，开始了我们的爱情故事。</p>
+                    </div>
+                </div>
+                <!-- 更多时间轴项目可以通过JavaScript动态添加 -->
+            </div>
+            <button class="add-memory-btn" onclick="addMemory()">
+                <i class="fas fa-plus"></i> 添加回忆
+            </button>
+        </div>
+    </section>
+
+    <!-- 照片墙 -->
+    <section id="photos" class="photos-section">
+        <div class="container">
+            <h2 class="section-title">我们的照片墙</h2>
+            <div class="photo-grid" id="photo-grid">
+                <!-- 照片将通过JavaScript动态添加 -->
+            </div>
+            <div class="upload-area">
+                <input type="file" id="photo-upload" accept="image/*" multiple style="display: none;">
+                <button class="upload-btn" onclick="document.getElementById('photo-upload').click()">
+                    <i class="fas fa-camera"></i> 上传照片
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 留言板 -->
+    <section id="messages" class="messages-section">
+        <div class="container">
+            <h2 class="section-title">我们的留言板</h2>
+            <div class="message-form">
+                <textarea id="message-input" placeholder="写下你想说的话..."></textarea>
+                <div class="form-actions">
+                    <select id="message-author">
+                        <option value="郭佳仑">郭佳仑</option>
+                        <option value="钱海宁">钱海宁</option>
+                    </select>
+                    <button onclick="addMessage()" class="submit-btn">
+                        <i class="fas fa-heart"></i> 发送爱意
+                    </button>
+                </div>
+            </div>
+            <div class="messages-container" id="messages-container">
+                <!-- 留言将通过JavaScript动态添加 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 美好回忆 -->
+    <section id="memories" class="memories-section">
+        <div class="container">
+            <h2 class="section-title">美好回忆</h2>
+            <div class="memories-grid" id="memories-grid">
+                <!-- 回忆卡片将通过JavaScript动态添加 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 郭佳仑 💕 钱海宁 的爱情记录. Made with 💕</p>
+        </div>
+    </footer>
+
+    <!-- 添加回忆模态框 -->
+    <div id="memory-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>添加美好回忆</h3>
+            <form id="memory-form">
+                <input type="date" id="memory-date" required>
+                <input type="text" id="memory-title" placeholder="回忆标题" required>
+                <textarea id="memory-description" placeholder="详细描述这个美好的回忆..."></textarea>
+                <button type="submit">保存回忆</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
